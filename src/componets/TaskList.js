@@ -42,10 +42,11 @@ const TaskList = () => {
   }
 
   const fetchTasks = async () => {
-    console.log("called");
+    console.log("called 2");
+    console.log(process.env)
     setLoading(true)
     try {
-      const {data} = await axios.get(process.env.BACK_END + '/api/tasks')
+      const {data} = await axios.get(`${process.env.BACK_END}/api/tasks`)
       setTasks(data)
 
       setLoading(false)
